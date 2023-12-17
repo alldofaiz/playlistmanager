@@ -1,0 +1,577 @@
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #282828 0%, #121111 100%);
+    color: #fff;
+}
+
+.background {
+    padding: 10rem;
+    position: relative;
+}
+
+.background-user {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.background-user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.background-title {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.image-user {
+  width: 200px; /* Set the desired width for the profile image */
+  height: 200px; /* Set the desired height for the profile image */
+  overflow: hidden;
+  margin-left: 20px; /* Adjust margin as needed */
+}
+
+.image-user img {
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  padding: 1rem; /* Adjust margin as needed */
+  margin: 40px 20px 0px 100px;
+}
+
+.background-title h1 {
+  /* Your h1 styling goes here */
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin: 80px 30px 30px 30px; /* Remove default margin */
+  color: #fff;
+  font-size: 80px;
+}
+
+.background-playlist {
+    padding: 5rem;
+    position: relative;
+}
+
+
+.background-title h3{
+  background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+.background-title h5{
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar-top {
+    background: linear-gradient(180deg, #1db954 0%, #178845 100%); /* Efek 3D menggunakan gradient CSS */
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Mengatur teks di tengah horizontal */
+}
+
+.navbar li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navbar a {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+}
+
+.btn-active{
+  background-color: #121212;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.navbar a:hover {
+    background-color: #121212;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.user-playlist{
+    padding: 50px;
+}
+
+.col-lg-3{
+    padding: 20px;
+}
+.card {
+    position: relative;
+    width: 250px;
+    height: 370px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    margin: auto;
+    width: 150px;
+    height: 370px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #178845 0%, #40c9ff 100% );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #178845 0%, #00dbde 100% );
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+  }
+  
+  .card:hover::after {
+    filter: blur(30px);
+  }
+  
+  .card:hover::before {
+    transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+  } 
+
+  .card span {
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 1.3em;
+  }
+  
+  .card .user-desc {
+    font-weight: 100;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 1em;
+  }
+
+  .card img {
+    width: 170px;
+    height: 100%;
+    background: #e8e8e8;
+    margin: auto;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card .img-playlist {
+    width: 200px;
+    height: 100%;
+    background: #e8e8e8;
+    margin: auto;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card button {
+    padding: 8px 30px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    background: #e8e8e8;
+    color: #111111;
+    font-weight: 600;
+  }
+  
+  .card button:hover {
+    background: #212121;
+    color: #ffffff;
+  }
+
+
+
+  .card-playlist {
+    position: relative;
+    width: 250px;
+    height: 370px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .card-playlist::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    margin: auto;
+    width: 150px;
+    height: 370px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #2b04db 0%, #ffffff 100% );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card-playlist::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #2b04db 0%, #ffffff 100% );
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+  }
+  
+  .card-playlist:hover::after {
+    filter: blur(30px);
+  }
+  
+  .card-playlist:hover::before {
+    transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+  } 
+
+  .card-playlist span {
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 1.3em;
+  }
+  
+  .card-playlist .user-desc {
+    font-weight: 100;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 1em;
+  }
+
+  .card-playlist .img {
+    width: 100px;
+    height: 100%;
+    background: #e8e8e8;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-playlist .img-playlist {
+    width: 200px;
+    height: 100%;
+    background: #e8e8e8;
+    margin: auto;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card-playlist button {
+    padding: 8px 30px;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    background: #e8e8e8;
+    color: #111111;
+    font-weight: 600;
+  }
+  
+  .card-playlist button:hover {
+    background: #212121;
+    color: #ffffff;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  
+.responsive-table {
+    li {
+      border-radius: 3px;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+    .table-header {
+      background: linear-gradient(180deg, #1e05bd 0%, #2200ff 100%);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #fff;
+    }
+    .table-row {
+      background-color: #ffffff;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    }
+    .col-1 {
+      flex-basis: 25%;
+    }
+    .col-2 {
+      flex-basis: 25%;
+    }
+    .col-3 {
+      flex-basis: 25%;
+    }
+    .col-4 {
+      flex-basis: 10%;
+    }
+    .col-5 {
+        flex-basis: 15%;
+      }
+    
+    @media all and (max-width: 767px) {
+      .table-header {
+        display: none;
+      }
+      .table-row{
+        
+      }
+      li {
+        display: block;
+      }
+      .col {
+        
+        flex-basis: 100%;
+        
+      }
+      .col {
+        display: flex;
+        padding: 10px 0;
+        &:before {
+          color: #6C7A89;
+          padding-right: 10px;
+          content: attr(data-label);
+          flex-basis: 50%;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+.container-login {
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.login {
+  width: 340px;
+  height: 550px;
+  background: #2c2c2c;
+  padding: 47px;
+  padding-bottom: 57px;
+  color: #fff;
+  border-radius: 17px;
+  padding-bottom: 50px;
+  font-size: 1.3em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  opacity: 1;
+  display: block;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 13px 18px;
+  margin: 20px 0 0 0;
+  font-size: 0.8em;
+  border-radius: 100px;
+  background: #3c3c3c;
+  color: #fff;
+}
+
+.login input:focus {
+  animation: bounce 1s;
+  -webkit-appearance: none;
+}
+
+.login input[type=submit],
+.login input[type=button],
+.login .h1 {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 13px;
+  margin: 40px 0 0 0;
+  border-radius: 500px;
+  font-weight: 600;
+  animation: bounce2 1.6s;
+}
+
+.login .h1 {
+  padding: 0;
+  position: relative;
+  top: -35px;
+  display: block;
+  margin-bottom: -0px;
+  font-size: 1.3em;
+}
+
+.login .btn {
+  background: linear-gradient(144deg, #178845, #178845 50%, #1db954);
+  color: #fff;
+  padding: 16px !important;
+}
+
+.btn:hover {
+  background: linear-gradient(144deg, #1db954 , 20%,#1db954 50%,#178845 );
+  color: #fff;
+  padding: 16px !important;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.login input[type=text] {
+  animation: bounce 1s;
+  -webkit-appearance: none;
+}
+
+.login input[type=password] {
+  animation: bounce1 1.3s;
+}
+
+.login .ui {
+  font-weight: bolder;
+  background: -webkit-linear-gradient(#B563FF, #535EFC, #0EC8EE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(0.25turn, #535EFC, #0EC8EE, #0EC8EE);
+  border-image-slice: 1;
+  display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+  .login {
+    width: 70%;
+    padding: 3em;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-250px);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce1 {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce2 {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.input-music{
+  padding: 1rem;
+  background-color: aliceblue;
+}
+
+.profile{
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profile h1{
+
+  text-align: center;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Add your own custom styles below this line */
+

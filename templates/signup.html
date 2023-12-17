@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Hello, world!</title>
+    <script>
+        $(document).ready(function () {
+            $("#signupButton").click(function () {
+                // Validate the form fields
+                var username = $("#username").val();
+                var description = $("#description").val();
+                var email = $("#email").val();
+                var password = $("#password").val();
+
+                // Perform your validation here
+
+                // If validation passes, submit the form using AJAX
+                $.ajax({
+                    type: "POST",
+                    url: "/signup",
+                    data: {
+                        username: username,
+                        description: description,
+                        email: email,
+                        password: password
+                    },
+                    success: function (response) {
+                        // Handle the success response
+                        console.log(response);
+
+                        // Redirect to the "/login" page after successful signup
+                        window.location.href = "/login";
+                    },
+                    error: function (error) {
+                        // Handle the error response
+                        console.log(error.responseText);
+                        // You might want to show an error message to the user
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background-color: #282828;">
+
+    <div class="background" style="background-image: url(static/dark.jpg); ;">
+        <div class="background-title">
+            <h1>Music Playlist Manager</h1>
+            <h3>by Alldo Faiz</h3>
+        </div>
+    </div>
+
+    <div class="navbar-top">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup" class="btn-active">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container-login">
+        <div class="login wrap">
+            <div class="h1">Sign Up</div>
+            <form method="post" action="/signup">
+                <input placeholder="Username" id="username" name="username" type="text" required>
+                <input placeholder="Description Profile" id="description" name="description" type="text" required>
+                <input
+                    pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                    placeholder="Email" id="email" name="email" type="text" required>
+                <input placeholder="Password" id="password" name="password" type="password" required>
+                <input value="Sign Up" class="btn" type="submit">
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Hello, world!</title>
+    <script>
+
+    </script>
+</head>
+
+<body style="background-color: #282828;">
+
+    <div class="background" style="background-image: url(static/dark.jpg); ;">
+        <div class="row background-title">
+            <h1>Music Playlist Manager</h1>
+            <h3>Daftar dan masuk untuk membuat playlist</h3>
+        </div>
+    </div>
+
+    <div class="navbar-top">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row user-playlist">
+            {% for user in users %}
+            <div class="col-lg-3">
+                <div class="card" style="background-color: #121212;">
+                    <div class="card-border-top"></div>
+                    <img id="profileImage" src="{{ user.profile_pic_real }}" alt="{{ user.username }} Profile">
+                    <span>{{ user.username }}</span>
+                    <p class="user-desc">{{ user.description }}</p>
+                    <a href="{{ url_for('profileview', username=user.username) }}" class="btn btn-primary">Listen</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
